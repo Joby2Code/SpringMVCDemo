@@ -16,7 +16,7 @@ public class LoginController implements Controller{
 		loginModel=lm;
 	}
 	@Override
-	@RequestMapping(value = "/login", method = RequestMethod.POST)
+	
 	public ModelAndView handleRequest(HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
