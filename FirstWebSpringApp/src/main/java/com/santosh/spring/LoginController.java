@@ -24,7 +24,8 @@ public class LoginController implements Controller {
 		String pass = req.getParameter("pass");
 		String type = loginModel.validation(uname, pass);
 		if (type == null) {
-			return new ModelAndView("/login.jsp");
+			throw new MyException("UserDetails are not valid");
+			//return new ModelAndView("/login.jsp");
 
 		} else if (type.equals("admin")) {
 			return new ModelAndView("/AdminHome.jsp");

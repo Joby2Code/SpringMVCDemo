@@ -40,7 +40,7 @@
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
-				<prop key="/login.spring">logincnt</prop>
+				<prop key="/views/login.spring">logincnt</prop>
 			</props>
 		</property>
 	</bean>
