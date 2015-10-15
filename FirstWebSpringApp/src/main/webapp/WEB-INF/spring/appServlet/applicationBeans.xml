@@ -36,10 +36,21 @@
 			<ref local="loginModel" />
 		</property>
 	</bean>
-	<bean id="myurlmapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="myurlmapping"
+		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/login.spring">logincnt</prop>
+			</props>
+		</property>
+	</bean>
+	<bean id="handlerExceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.santosh.spring.MyException">
+					/Error.html
+				</prop>
 			</props>
 		</property>
 	</bean>
