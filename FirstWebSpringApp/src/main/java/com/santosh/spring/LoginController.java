@@ -8,33 +8,29 @@ import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
 import org.springframework.web.servlet.mvc.Controller;
 
-public class LoginController implements Controller{
+public class LoginController implements Controller {
 
 	LoginModel loginModel;
-	public void setLoginModel(LoginModel lm)
-	{
-		loginModel=lm;
+
+	public void setLoginModel(LoginModel lm) {
+		loginModel = lm;
 	}
+
 	@Override
-	
 	public ModelAndView handleRequest(HttpServletRequest req,
 			HttpServletResponse res) throws Exception {
 		// TODO Auto-generated method stub
-		String uname=req.getParameter("uname");
-		String pass=req.getParameter("pass");
-		String type=loginModel.validation(uname,pass);
-		if(type==null)
-		{
+		String uname = req.getParameter("uname");
+		String pass = req.getParameter("pass");
+		String type = loginModel.validation(uname, pass);
+		if (type == null) {
 			return new ModelAndView("/login.jsp");
-			
-		}
-		else if(type.equals("admin"))
-		{
+
+		} else if (type.equals("admin")) {
 			return new ModelAndView("/AdminHome.jsp");
-		}
-		else
+		} else
 			return new ModelAndView("/UserHome.jsp");
-		
+
 	}
 
 }

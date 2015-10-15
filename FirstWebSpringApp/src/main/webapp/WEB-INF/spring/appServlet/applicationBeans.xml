@@ -36,8 +36,7 @@
 			<ref local="loginModel" />
 		</property>
 	</bean>
-	<bean id="myurlmapping"
-		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
+	<bean id="myurlmapping" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
 		<property name="mappings">
 			<props>
 				<prop key="/login.spring">logincnt</prop>
