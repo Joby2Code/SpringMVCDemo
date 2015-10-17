@@ -49,7 +49,7 @@
 		<property name="exceptionMappings">
 			<props>
 				<prop key="com.santosh.spring.MyException">
-					/WEB-INF/views/Error
+					Error
 				</prop>
 			</props>
 		</property>
