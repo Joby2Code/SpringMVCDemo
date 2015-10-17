@@ -1,5 +1,7 @@
 package com.santosh.spring;
 
+import java.sql.SQLException;
+
 import org.springframework.dao.EmptyResultDataAccessException;
 import org.springframework.jdbc.core.JdbcTemplate;
 
@@ -19,6 +21,7 @@ private JdbcTemplate jdbcTemplate;
 		catch(EmptyResultDataAccessException e){
 			return null;
 		}
+	
 	}
 
 }

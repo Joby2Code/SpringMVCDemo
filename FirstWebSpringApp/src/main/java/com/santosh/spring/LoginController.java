@@ -23,14 +23,15 @@ public class LoginController implements Controller {
 		String uname = req.getParameter("uname");
 		String pass = req.getParameter("pass");
 		String type = loginModel.validation(uname, pass);
+		System.out.println("Inside Servlet");
 		if (type == null) {
 			throw new MyException("UserDetails are not valid");
 			//return new ModelAndView("/login.jsp");
 
 		} else if (type.equals("admin")) {
-			return new ModelAndView("/AdminHome.jsp");
+			return new ModelAndView("/AdminHome");
 		} else
-			return new ModelAndView("/UserHome.jsp");
+			return new ModelAndView("/UserHome");
 
 	}
 
