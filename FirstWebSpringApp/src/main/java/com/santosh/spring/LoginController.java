@@ -3,12 +3,14 @@ package com.santosh.spring;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
+import org.springframework.validation.BindException;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.mvc.Controller;
+import org.springframework.web.servlet.mvc.*;
 
-public class LoginController implements Controller {
+@SuppressWarnings("deprecation")
+public class LoginController extends AbstractCommandController {
 
 	LoginModel loginModel;
 
@@ -17,21 +19,20 @@ public class LoginController implements Controller {
 	}
 
 	@Override
-	public ModelAndView handleRequest(HttpServletRequest req,
-			HttpServletResponse res) throws Exception {
+	public ModelAndView handle(HttpServletRequest req,
+			HttpServletResponse res, Object command, BindException errors) throws Exception {
 		// TODO Auto-generated method stub
-		String uname = req.getParameter("uname");
-		String pass = req.getParameter("pass");
-		String type = loginModel.validation(uname, pass);
-		System.out.println("Inside Servlet");
+		String type = loginModel.validation((UserDetails) command);
+		System.out.println("Inside Servlet"+type);
 		if (type == null) {
 			throw new MyException("UserDetails are not valid");
 			//return new ModelAndView("/login.jsp");
 
 		} else if (type.equals("admin")) {
 			return new ModelAndView("/AdminHome");
-		} else
-			return new ModelAndView("/UserHome");
+		} 
+		else 
+			return new ModelAndView("/UserHome");			
 
 	}
 

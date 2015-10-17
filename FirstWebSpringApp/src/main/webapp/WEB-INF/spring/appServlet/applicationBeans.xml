@@ -35,6 +35,12 @@
 		<property name="loginModel">
 			<ref local="loginModel" />
 		</property>
+		<property name="commandClass">
+			<value type="java.lang.Class">com.santosh.spring.UserDetails</value>
+		</property>
+		<property name="commandName">
+			<value>UserDetails</value>
+		</property>
 	</bean>
 	<bean id="myurlmapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -54,5 +60,10 @@
 			</props>
 		</property>
 	</bean>
+	<!-- To Configure Multiple beans Syntax is <bean id="handlerMapping3" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
+		<property name="urlMap"> <map> <entry key="/addEmployee.spring"> <bean class="com.santosh.spring.AddEmployeeController"> 
+		</bean> </entry> <entry key="/removeEmployee.spring"> <ref local="searchEmp"/> 
+		</entry> </map> </property></bean> <bean id="removeEmp" class="classname"> 
+		<!Configure ependencies> </bean> -->
 </beans>
 	

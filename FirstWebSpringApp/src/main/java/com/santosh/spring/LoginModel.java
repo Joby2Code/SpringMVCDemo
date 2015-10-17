@@ -12,13 +12,15 @@ private JdbcTemplate jdbcTemplate;
 		jdbcTemplate=jt;
 	}
 	
-	public String validation(String uname,String pass)
+	public String validation(UserDetails user)
 	{
+		System.out.println(user.getUname()+"----- " +user.getPass());
 		try
 		{
-			return (String)jdbcTemplate.queryForObject("select type from userdetails where username=\'"+uname+"\' and userpass=\'"+pass+"\'",String.class);
+			return (String)jdbcTemplate.queryForObject("select type from userdetails where username=\'"+user.getUname()+"\' and userpass=\'"+user.getPass()+"\'",String.class);
 		}
 		catch(EmptyResultDataAccessException e){
+			e.printStackTrace();
 			return null;
 		}
 	
