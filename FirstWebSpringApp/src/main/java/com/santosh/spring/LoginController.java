@@ -1,5 +1,7 @@
 package com.santosh.spring;
 
+import java.io.PrintWriter;
+
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
@@ -22,6 +24,14 @@ public class LoginController extends AbstractCommandController {
 	public ModelAndView handle(HttpServletRequest req,
 			HttpServletResponse res, Object command, BindException errors) throws Exception {
 		// TODO Auto-generated method stub
+		if(errors.hasErrors())
+		{
+			System.out.println("Errors in validation");
+			PrintWriter out= res.getWriter();
+			return new ModelAndView("/Validation");
+		}
+		
+		
 		String type = loginModel.validation((UserDetails) command);
 		System.out.println("Inside Servlet"+type);
 		if (type == null) {

@@ -41,6 +41,9 @@
 		<property name="commandName">
 			<value>UserDetails</value>
 		</property>
+		<property name="validator">
+			<bean class="com.santosh.spring.UserValidator" />
+		</property>
 	</bean>
 	<bean id="myurlmapping"
 		class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping">
@@ -64,6 +67,6 @@
 		<property name="urlMap"> <map> <entry key="/addEmployee.spring"> <bean class="com.santosh.spring.AddEmployeeController"> 
 		</bean> </entry> <entry key="/removeEmployee.spring"> <ref local="searchEmp"/> 
 		</entry> </map> </property></bean> <bean id="removeEmp" class="classname"> 
-		<!Configure ependencies> </bean> -->
+		<!Configure dependencies> </bean> -->
 </beans>
 	
