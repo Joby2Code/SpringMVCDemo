@@ -22,10 +22,10 @@ public class EmpValidator implements Validator{
 				"field.required", "The username cannot be empty");
 		ValidationUtils.rejectIfEmptyOrWhitespace(errors, "job",
 				"field.required", "The password cannot be empty");
-		if (ud.getDeptno()< 10 && ud.getDeptno()> 99) {
-			errors.rejectValue("pass", "field.minlength",
+		if (ud.getDeptno()> 10 && ud.getDeptno()< 99) {
+			errors.rejectValue("deptno", "field.minlength",
 					new Object[] { Integer.valueOf(99) },
-					"Cannot be greater than 99");
+					"Value should be between 10 to 99");
 		}
 		
 	}
