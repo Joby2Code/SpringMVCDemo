@@ -1,0 +1,38 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans-3.0.xsd">
+
+	<bean name="/addEmployee.spring" class="com.santosh.spring.AddEmployeeController">
+		<property name="employeeServices">
+			<ref bean="empServices" />
+		</property>
+		<property name="commandClass">
+			<value type="java.lang.Class">com.santosh.spring.EmpDetails</value>
+		</property>
+		<property name="commandName">
+			<value>EmpDetails</value>
+		</property>
+		<property name="validator">
+			<bean class="com.santosh.spring.EmpValidator" />
+		</property>
+		<property name="sessionForm" value="false"/>
+		<property name="formView">
+		<value>/AddEmployee</value>
+		</property>
+		<property name="successView">
+		<value>/AddEmployeeSuccess</value>
+		</property>
+	</bean>
+	<bean id="handlerExceptionResolver"
+		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
+		<property name="exceptionMappings">
+			<props>
+				<prop key="com.santosh.spring.MyException">
+					/Errors/Error
+				</prop>
+			</props>
+		</property>
+	</bean>
+
+	</beans>

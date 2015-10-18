@@ -4,11 +4,9 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title>Insert title here</title>
+<title></title>
 </head>
 <body>
-Welcome Admin<br/>
-User Name:<%=request.getParameter("uname") %>
-<a href="addEmployee.spring">Add Employee</a>
+Employee added successfully.
 </body>
 </html>

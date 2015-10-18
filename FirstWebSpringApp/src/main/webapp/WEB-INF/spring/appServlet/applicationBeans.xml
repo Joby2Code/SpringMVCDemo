@@ -31,6 +31,11 @@
 			<ref local="jdbctemp" />
 		</constructor-arg>
 	</bean>
+	<bean id="empServices" class="com.santosh.spring.EmployeeServices">
+		<constructor-arg>
+			<ref local="jdbctemp" />
+		</constructor-arg>
+	</bean>
 	<bean id="logincnt" class="com.santosh.spring.LoginController">
 		<property name="loginModel">
 			<ref local="loginModel" />

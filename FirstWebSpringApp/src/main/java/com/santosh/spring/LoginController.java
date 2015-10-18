@@ -21,28 +21,25 @@ public class LoginController extends AbstractCommandController {
 	}
 
 	@Override
-	public ModelAndView handle(HttpServletRequest req,
-			HttpServletResponse res, Object command, BindException errors) throws Exception {
+	public ModelAndView handle(HttpServletRequest req, HttpServletResponse res,
+			Object command, BindException errors) throws Exception {
 		// TODO Auto-generated method stub
-		if(errors.hasErrors())
-		{
-			System.out.println("Errors in validation");
-			PrintWriter out= res.getWriter();
+		if (errors.hasErrors()) {
+			System.out.println("Errors in validation"+command.toString());
+			PrintWriter out = res.getWriter();
 			return new ModelAndView("/Validation");
 		}
-		
-		
+
 		String type = loginModel.validation((UserDetails) command);
-		System.out.println("Inside Servlet"+type);
+		System.out.println("Inside Servlet" + type);
 		if (type == null) {
 			throw new MyException("UserDetails are not valid");
-			//return new ModelAndView("/login.jsp");
+			// return new ModelAndView("/login.jsp");
 
 		} else if (type.equals("admin")) {
 			return new ModelAndView("/AdminHome");
-		} 
-		else 
-			return new ModelAndView("/UserHome");			
+		} else
+			return new ModelAndView("/UserHome");
 
 	}
 
