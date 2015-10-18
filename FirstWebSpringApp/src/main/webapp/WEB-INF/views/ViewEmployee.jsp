@@ -4,10 +4,14 @@
 <html>
 <head>
 <meta http-equiv="Content-Type" content="text/html; charset=ISO-8859-1">
-<title></title>
+<title>Insert title here</title>
 </head>
 <body>
-Employee added successfully.
-<a href="viewEmployee.spring">View Employee</a>
+<form action="viewEmployee.spring" method="post">
+		<pre>
+Employee Number:<input type="text" name="empno" />
+<input type="submit" value="View Employee" />
+</pre>
+	</form>
 </body>
 </html>

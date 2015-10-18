@@ -9,8 +9,7 @@
 </head>
 <body>
 	<i><form:errors path="EmpDetails.name" /><br /> <br /> <form:errors
-			path="EmpDetails.deptno" 
-			path="EmpDetails.job"/> </i>
+			path="EmpDetails.deptno"/> </i>
 	<form action="addEmployee.spring" method="post">
 		<pre>
 Employee Number:<input type="text" name="empno" />

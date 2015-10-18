@@ -16,13 +16,27 @@
 		<property name="validator">
 			<bean class="com.santosh.spring.EmpValidator" />
 		</property>
-		<property name="sessionForm" value="false"/>
+		<property name="sessionForm" value="true" />
 		<property name="formView">
-		<value>/AddEmployee</value>
+			<value>/AddEmployee</value>
 		</property>
 		<property name="successView">
-		<value>/AddEmployeeSuccess</value>
+			<value>/AddEmployeeSuccess</value>
 		</property>
+	</bean>
+
+	<bean name="/viewEmployee.spring" class="com.santosh.spring.AddEmployeeController">
+		<property name="commandClass">
+			<value type="java.lang.Class">com.santosh.spring.EmpDetails</value>
+		</property>
+		<property name="commandName">
+			<value>EmpDetails</value>
+		</property>
+		<property name="sessionForm" value="true" />
+		<property name="formView">
+			<value>/ViewEmployee</value>
+		</property>
+
 	</bean>
 	<bean id="handlerExceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -35,4 +49,4 @@
 		</property>
 	</bean>
 
-	</beans>
+</beans>
