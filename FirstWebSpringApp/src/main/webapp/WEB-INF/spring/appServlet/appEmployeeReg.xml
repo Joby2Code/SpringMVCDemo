@@ -24,14 +24,8 @@
 			<value>/AddEmployeeSuccess</value>
 		</property>
 	</bean>
-	<bean id="myMethodResolver"
-		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
-		<property name="paramName" value="submit"></property>
-	</bean>
-
-	<bean name="/mypath.spring" class="com.santosh.spring.ArithmeticController">
-		<property name="methodNameResolver" ref="myMethodResolver"></property>
-	</bean>
+	
+	
 	<bean id="handlerExceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
 		<property name="exceptionMappings">
