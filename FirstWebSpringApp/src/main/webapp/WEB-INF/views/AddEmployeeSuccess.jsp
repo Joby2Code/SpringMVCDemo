@@ -8,5 +8,6 @@
 </head>
 <body>
 Employee added successfully.
+<a href="mypath.spring">Use Calc App</a>
 </body>
 </html>

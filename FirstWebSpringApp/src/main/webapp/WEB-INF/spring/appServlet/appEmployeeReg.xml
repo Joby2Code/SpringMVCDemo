@@ -16,13 +16,21 @@
 		<property name="validator">
 			<bean class="com.santosh.spring.EmpValidator" />
 		</property>
-		<property name="sessionForm" value="false"/>
+		<property name="sessionForm" value="false" />
 		<property name="formView">
-		<value>/AddEmployee</value>
+			<value>/AddEmployee</value>
 		</property>
 		<property name="successView">
-		<value>/AddEmployeeSuccess</value>
+			<value>/AddEmployeeSuccess</value>
 		</property>
+	</bean>
+	<bean id="myMethodResolver"
+		class="org.springframework.web.servlet.mvc.multiaction.ParameterMethodNameResolver">
+		<property name="paramName" value="submit"></property>
+	</bean>
+
+	<bean name="/mypath.spring" class="com.santosh.spring.ArithmeticController">
+		<property name="methodNameResolver" ref="myMethodResolver"></property>
 	</bean>
 	<bean id="handlerExceptionResolver"
 		class="org.springframework.web.servlet.handler.SimpleMappingExceptionResolver">
@@ -35,4 +43,4 @@
 		</property>
 	</bean>
 
-	</beans>
+</beans>
