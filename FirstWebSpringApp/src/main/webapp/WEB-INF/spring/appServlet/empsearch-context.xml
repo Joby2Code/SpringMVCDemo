@@ -39,11 +39,15 @@
 	</bean>
 
 	<!-- Configure views to render the view for /search.spring -->
-	<bean id="successSingleEmp" class="org.springframework.web.servlet.view.JstlView">
-		<property name="url" value="/WEB-INF/views/jsps/EmployeeDetails.jsp" />
+	<!-- <bean id="successSingleEmp" class="org.springframework.web.servlet.view.JstlView"> 
+		<property name="url" value="/WEB-INF/views/jsps/EmployeeDetails.jsp" /> </bean> -->
+	<!-- <bean id="successMultipleEmps" class="org.springframework.web.servlet.view.JstlView"> 
+		<property name="url" value="/WEB-INF/views/jsps/EmployeeList.jsp" /> </bean> -->
+
+	<bean id="successSingleEmp" class="com.santosh.spring.view.EmployeeDetailsPDFView">
 	</bean>
-	<bean id="successMultipleEmps" class="org.springframework.web.servlet.view.JstlView">
-		<property name="url" value="/WEB-INF/views/jsps/EmployeeList.jsp" />
+
+	<bean id="successMultipleEmps" class="com.santosh.spring.view.EmployeeListExcelView">
 	</bean>
 	<bean id="dberrorView" class="org.springframework.web.servlet.view.JstlView">
 		<property name="url" value="/WEB-INF/views/jsps/DBError.jsp" />
