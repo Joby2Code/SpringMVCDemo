@@ -1,10 +1,13 @@
 package com.santosh.spring;
 
+import java.util.Date;
+
 public class EmpDetails {
 
 	private int empno, deptno, mgr;
 	private String name, job;
 	private double sal, comm;
+	private Date hiredate;
 
 	public int getEmpno() {
 		return empno;
@@ -12,6 +15,14 @@ public class EmpDetails {
 
 	public void setEmpno(int empno) {
 		this.empno = empno;
+	}
+
+	public Date getHiredate() {
+		return hiredate;
+	}
+
+	public void setHiredate(Date hiredate) {
+		this.hiredate = hiredate;
 	}
 
 	public int getDeptno() {

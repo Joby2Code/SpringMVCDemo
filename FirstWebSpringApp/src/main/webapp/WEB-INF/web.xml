@@ -24,7 +24,9 @@
 			<param-value>/WEB-INF/spring/appServlet/servlet-context.xml
 			/WEB-INF/spring/appServlet/applicationBeans.xml
 			/WEB-INF/spring/appServlet/appEmployeeReg.xml
-			/WEB-INF/spring/appServlet/CalcBean.xml</param-value>
+			/WEB-INF/spring/appServlet/CalcBean.xml
+			/WEB-INF/spring/appServlet/empsearch-context.xml
+			</param-value>
 		</init-param>
 		<load-on-startup>1</load-on-startup>
 	</servlet>
@@ -35,7 +37,8 @@
 	</servlet-mapping>
 
 	<welcome-file-list>
-		<welcome-file>/WEB-INF/views/login.jsp</welcome-file>
+		<welcome-file>/WEB-INF/views/Search.jsp</welcome-file>
+		<!-- <welcome-file>/WEB-INF/views/login.jsp</welcome-file> -->
 	</welcome-file-list>
 
 

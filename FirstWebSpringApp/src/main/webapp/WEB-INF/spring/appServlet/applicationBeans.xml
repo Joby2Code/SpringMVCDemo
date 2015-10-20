@@ -36,6 +36,13 @@
 			<ref local="jdbctemp" />
 		</constructor-arg>
 	</bean>
+	<bean id="empRowMapper" class="com.santosh.spring.EmpRowMapper" />
+	<bean id="empDAO" class="com.santosh.spring.EmpDAOImplDB">
+		<constructor-arg>
+			<ref local="jdbctemp" />
+		</constructor-arg>
+		<property name="mapper" ref="empRowMapper" />
+	</bean>
 	<bean id="logincnt" class="com.santosh.spring.LoginController">
 		<property name="loginModel">
 			<ref local="loginModel" />
@@ -68,6 +75,7 @@
 			</props>
 		</property>
 	</bean>
+
 	<!-- To Configure Multiple beans Syntax is <bean id="handlerMapping3" class="org.springframework.web.servlet.handler.SimpleUrlHandlerMapping"> 
 		<property name="urlMap"> <map> <entry key="/addEmployee.spring"> <bean class="com.santosh.spring.AddEmployeeController"> 
 		</bean> </entry> <entry key="/removeEmployee.spring"> <ref local="searchEmp"/> 
